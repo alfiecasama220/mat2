@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://bl6lkgyi5wbv4"]
+
+[ext_resource type="Texture2D" uid="uid://dfis48sr2rc4v" path="res://eggs/keyframes/yellow_egg/_01_yellow_egg.png" id="1_rd8gu"]
+[ext_resource type="Script" path="res://eggsScript.gd" id="1_v3ya6"]
+[ext_resource type="Texture2D" uid="uid://bd1tel3yi74yk" path="res://eggs/keyframes/yellow_egg/_02_yellow_egg.png" id="2_xpgre"]
+[ext_resource type="Texture2D" uid="uid://cfm5u43dkr7ki" path="res://eggs/keyframes/yellow_egg/_03_yellow_egg.png" id="3_b22bk"]
+[ext_resource type="Texture2D" uid="uid://c0yijjekapcqy" path="res://eggs/keyframes/yellow_egg/_04_yellow_egg.png" id="4_cmxkb"]
+[ext_resource type="Texture2D" uid="uid://cvi4y7beus7bs" path="res://eggs/keyframes/yellow_egg/_05_yellow_egg.png" id="5_jkx7n"]
+[ext_resource type="Texture2D" uid="uid://cgacir5ycwntw" path="res://eggs/keyframes/yellow_egg/_06_yellow_egg.png" id="6_6sd0s"]
+[ext_resource type="Texture2D" uid="uid://vsg08c1xkga6" path="res://eggs/keyframes/yellow_egg/_07_yellow_egg.png" id="7_51fex"]
+[ext_resource type="Texture2D" uid="uid://cbmb7nesfkm5w" path="res://eggs/keyframes/yellow_egg/_08_yellow_egg.png" id="8_y2ia1"]
+[ext_resource type="Texture2D" uid="uid://dw5wgjx8ypixh" path="res://eggs/keyframes/yellow_egg/_09_yellow_egg.png" id="9_jidfn"]
+[ext_resource type="Texture2D" uid="uid://yxjqhnncrprn" path="res://eggs/keyframes/yellow_egg/_10_yellow_egg.png" id="10_xe311"]
+[ext_resource type="Texture2D" uid="uid://cnfh2l6ukhodt" path="res://eggs/keyframes/yellow_egg/_11_yellow_egg.png" id="11_iy2n4"]
+[ext_resource type="Texture2D" uid="uid://co20ws5n6ryor" path="res://eggs/keyframes/yellow_egg/_12_yellow_egg.png" id="12_nuppy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwv1r"]
+radius = 9.05539
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocypn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rd8gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xpgre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b22bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cmxkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jkx7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6sd0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_51fex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y2ia1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jidfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xe311")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_iy2n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nuppy")
+}],
+"loop": true,
+"name": &"eggs",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ma1ah"]
+radius = 19.2354
+
+[node name="eggs" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_v3ya6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lwv1r")
+
+[node name="eggs" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.027832, 0.027832)
+sprite_frames = SubResource("SpriteFrames_ocypn")
+animation = &"eggs"
+frame_progress = 0.422491
+
+[node name="collect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collect"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_ma1ah")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(1, 0.9)
+
+[connection signal="body_entered" from="collect" to="." method="_on_collect_body_entered"]

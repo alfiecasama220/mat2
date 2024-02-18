@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvwkffjv6xja6"]
+
+[ext_resource type="Script" path="res://animalsMove/bird2.gd" id="1_3r3ci"]
+[ext_resource type="Texture2D" uid="uid://dqnbki7a68wdm" path="res://TRIALSS/character/spritesheet.png" id="2_mpeqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t0ny"]
+atlas = ExtResource("2_mpeqa")
+region = Rect2(240, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akq0k"]
+atlas = ExtResource("2_mpeqa")
+region = Rect2(224, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0xft"]
+atlas = ExtResource("2_mpeqa")
+region = Rect2(208, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibntm"]
+atlas = ExtResource("2_mpeqa")
+region = Rect2(192, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0oy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t0ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akq0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0xft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibntm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="bird" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_3r3ci")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(296, 177)
+scale = Vector2(2.125, 2.07317)
+sprite_frames = SubResource("SpriteFrames_d0oy3")
+animation = &"walk"
+frame_progress = 0.405778

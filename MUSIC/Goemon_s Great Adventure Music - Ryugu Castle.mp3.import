@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lbjwi253u7sp"
+path="res://.godot/imported/Goemon_s Great Adventure Music - Ryugu Castle.mp3-02722273719f412f820d3e0cb76fe81f.mp3str"
+
+[deps]
+
+source_file="res://MUSIC/Goemon_s Great Adventure Music - Ryugu Castle.mp3"
+dest_files=["res://.godot/imported/Goemon_s Great Adventure Music - Ryugu Castle.mp3-02722273719f412f820d3e0cb76fe81f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

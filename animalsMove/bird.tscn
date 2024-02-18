@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cb5uw43jcqh3k"]
+
+[ext_resource type="Script" path="res://animalsMove/snake.gd" id="1_g32uf"]
+[ext_resource type="Texture2D" uid="uid://dqnbki7a68wdm" path="res://TRIALSS/character/spritesheet.png" id="2_otfqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f41b"]
+atlas = ExtResource("2_otfqa")
+region = Rect2(64, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbg1f"]
+atlas = ExtResource("2_otfqa")
+region = Rect2(80, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts2w1"]
+atlas = ExtResource("2_otfqa")
+region = Rect2(96, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfp5s"]
+atlas = ExtResource("2_otfqa")
+region = Rect2(112, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0oy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f41b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbg1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts2w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfp5s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="bird" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_g32uf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(296, 177)
+scale = Vector2(2.125, 2.07317)
+sprite_frames = SubResource("SpriteFrames_d0oy3")
+animation = &"walk"
+frame_progress = 0.260875

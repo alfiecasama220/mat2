@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://cocd457dgo737"]
+
+[ext_resource type="Script" path="res://guiScript.gd" id="1_a7xbv"]
+[ext_resource type="FontFile" uid="uid://c1kb6ugmc3fkb" path="res://asset/fonts/JustLeafsRegular-0WqeR.ttf" id="1_qgwiq"]
+[ext_resource type="Texture2D" uid="uid://canyb3c0jnpji" path="res://asset/—Pngtree—collection set of wooden icon_5996137.png" id="2_31pen"]
+[ext_resource type="FontFile" uid="uid://b5w6mfitk8sbv" path="res://TRIALSS/fonts/FROSTY__.TTF" id="3_6rw0r"]
+[ext_resource type="PackedScene" uid="uid://cmrr1ijy8ur8s" path="res://pause_menu.tscn" id="5_7c28l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cesur"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdcdb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkydf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbnfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4avbm"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7xbv")
+
+[node name="menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 75.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cesur")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jdcdb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dkydf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbnfr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4avbm")
+text = "
+"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="menu"]
+position = Vector2(33, 30)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("2_31pen")
+region_enabled = true
+region_rect = Rect2(50, 250, 175, 175)
+
+[node name="playerHP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 76.0
+offset_right = 79.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("3_6rw0r")
+theme_override_font_sizes/font_size = 30
+text = "HP:"
+
+[node name="objectives" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 114.0
+offset_right = 115.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("3_6rw0r")
+theme_override_font_sizes/font_size = 30
+text = "Collected"
+
+[node name="coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 152.0
+offset_right = 78.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("3_6rw0r")
+theme_override_font_sizes/font_size = 30
+text = "Coins"
+
+[node name="level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 278.0
+offset_right = 701.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qgwiq")
+theme_override_font_sizes/font_size = 90
+text = "Level 1"
+
+[node name="plus" type="Label" parent="."]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 357.0
+offset_right = 877.0
+offset_bottom = 429.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qgwiq")
+theme_override_font_sizes/font_size = 22
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_7c28l")]
+visible = false
+
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

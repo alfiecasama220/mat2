@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1fcdhma82pn3"
+path="res://.godot/imported/Cartoon Background Music No Copyright Funny Animation Royalty Free.wav-9a174be2e5291f74fd7cb77d68e7dc6a.sample"
+
+[deps]
+
+source_file="res://MUSIC/Cartoon Background Music No Copyright Funny Animation Royalty Free.wav"
+dest_files=["res://.godot/imported/Cartoon Background Music No Copyright Funny Animation Royalty Free.wav-9a174be2e5291f74fd7cb77d68e7dc6a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

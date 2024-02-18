@@ -1,0 +1,171 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4sbv4gr0po1f"]
+
+[ext_resource type="Script" path="res://menuScene.gd" id="1_m1bpv"]
+[ext_resource type="Texture2D" uid="uid://cixgoyh5ufmjg" path="res://TRIALSS/background/battleback1.png" id="1_vu5co"]
+[ext_resource type="FontFile" uid="uid://b5w6mfitk8sbv" path="res://TRIALSS/fonts/FROSTY__.TTF" id="2_ykkdm"]
+[ext_resource type="Texture2D" uid="uid://snwui37pdce6" path="res://TRIALSS/TilesetGrass/map1.png" id="3_4cga4"]
+[ext_resource type="PackedScene" uid="uid://dvwkffjv6xja6" path="res://animalsMove/bird2.tscn" id="5_fyb2i"]
+[ext_resource type="PackedScene" uid="uid://cb5uw43jcqh3k" path="res://animalsMove/bird.tscn" id="5_qc8e7"]
+[ext_resource type="AudioStream" uid="uid://c1fcdhma82pn3" path="res://MUSIC/Cartoon Background Music No Copyright Funny Animation Royalty Free.wav" id="7_0tywu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3oap7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vb1u1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk5nv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hjyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vxsk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ykogl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1bpv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 655.0
+texture = ExtResource("1_vu5co")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = -181.0
+offset_top = -762.0
+offset_right = 1206.0
+offset_bottom = 1629.0
+texture = ExtResource("3_4cga4")
+
+[node name="birds" type="Control" parent="."]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bird" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-315, -21)
+
+[node name="bird2" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-320, 8)
+
+[node name="bird3" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-312, 39)
+
+[node name="bird4" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-273, 6)
+
+[node name="bird5" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-362, -7)
+
+[node name="bird6" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-362, 27)
+
+[node name="bird7" parent="birds" instance=ExtResource("5_qc8e7")]
+position = Vector2(-405, 10)
+
+[node name="birds2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bird" parent="birds2" instance=ExtResource("5_fyb2i")]
+position = Vector2(891, 197)
+
+[node name="bird2" parent="birds2" instance=ExtResource("5_fyb2i")]
+position = Vector2(891, 197)
+scale = Vector2(0.996022, 1.19857)
+
+[node name="bird3" parent="birds2" instance=ExtResource("5_fyb2i")]
+position = Vector2(891, 197)
+scale = Vector2(0.8462, 1.10609)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.427451)
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 654.0
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 85.0
+offset_right = 717.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("2_ykkdm")
+theme_override_font_sizes/font_size = 90
+text = "Kidz Zoo"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 448.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.788235, 0.607843, 0.290196, 1)
+theme_override_fonts/font = ExtResource("2_ykkdm")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3oap7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vb1u1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pk5nv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8hjyo")
+text = "START"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="option" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.788235, 0.607843, 0.290196, 1)
+theme_override_fonts/font = ExtResource("2_ykkdm")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3oap7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vb1u1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pk5nv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vxsk")
+text = "OPTION"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.788235, 0.607843, 0.290196, 1)
+theme_override_fonts/font = ExtResource("2_ykkdm")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3oap7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vb1u1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pk5nv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ykogl")
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0tywu")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/quit" to="." method="_on_quit_pressed"]

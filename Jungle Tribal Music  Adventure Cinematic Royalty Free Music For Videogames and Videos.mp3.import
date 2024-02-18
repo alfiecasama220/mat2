@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cufve0ovkmt44"
+path="res://.godot/imported/Jungle Tribal Music  Adventure Cinematic Royalty Free Music For Videogames and Videos.mp3-d5b66bef020dc4a8c6207a719aabd1b6.mp3str"
+
+[deps]
+
+source_file="res://Jungle Tribal Music  Adventure Cinematic Royalty Free Music For Videogames and Videos.mp3"
+dest_files=["res://.godot/imported/Jungle Tribal Music  Adventure Cinematic Royalty Free Music For Videogames and Videos.mp3-d5b66bef020dc4a8c6207a719aabd1b6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmrr1ijy8ur8s"]
+
+[ext_resource type="FontFile" uid="uid://bmmssvo180edv" path="res://asset/fonts/JurassicPark-BL48.ttf" id="1_5ux2m"]
+[ext_resource type="Texture2D" uid="uid://4et1wrif1see" path="res://coverpage/—Pngtree—hand drawn cartoon wooden fence_5630581.png" id="1_jyaee"]
+[ext_resource type="Script" path="res://pause_menuScript.gd" id="1_tksom"]
+[ext_resource type="Texture2D" uid="uid://bqaiv18ttye4f" path="res://asset/3.png" id="3_u8cs1"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_tksom")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -13.0
+offset_right = 1170.0
+offset_bottom = 665.0
+color = Color(0.101961, 0.101961, 0.101961, 0.588235)
+
+[node name="—pngtree—handDrawnCartoonWoodenFence5630581" type="Sprite2D" parent="."]
+position = Vector2(208, 605)
+scale = Vector2(0.155625, 0.155625)
+texture = ExtResource("1_jyaee")
+
+[node name="—pngtree—handDrawnCartoonWoodenFence5630582" type="Sprite2D" parent="."]
+position = Vector2(582, 612)
+scale = Vector2(0.155625, 0.155625)
+texture = ExtResource("1_jyaee")
+
+[node name="—pngtree—handDrawnCartoonWoodenFence5630583" type="Sprite2D" parent="."]
+position = Vector2(956, 617)
+scale = Vector2(0.155625, 0.155625)
+texture = ExtResource("1_jyaee")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 106.0
+offset_right = 733.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("1_5ux2m")
+theme_override_font_sizes/font_size = 200
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resume" type="TextureButton" parent="."]
+offset_left = 460.0
+offset_top = 269.0
+offset_right = 660.0
+offset_bottom = 339.0
+texture_normal = ExtResource("3_u8cs1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="resume"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5ux2m")
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart" type="TextureButton" parent="."]
+offset_left = 462.0
+offset_top = 357.0
+offset_right = 662.0
+offset_bottom = 427.0
+texture_normal = ExtResource("3_u8cs1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="restart"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5ux2m")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit" type="TextureButton" parent="."]
+offset_left = 463.0
+offset_top = 448.0
+offset_right = 663.0
+offset_bottom = 518.0
+texture_normal = ExtResource("3_u8cs1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="quit"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5ux2m")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

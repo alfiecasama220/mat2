@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://4ylk6a2in53i"]
+
+[ext_resource type="AudioStream" uid="uid://c1fcdhma82pn3" path="res://MUSIC/Cartoon Background Music No Copyright Funny Animation Royalty Free.wav" id="1_drbrl"]
+[ext_resource type="Script" path="res://global.gd" id="1_ftli7"]
+[ext_resource type="PackedScene" uid="uid://dovfyhscjxv8q" path="res://birds.tscn" id="2_fdeq5"]
+[ext_resource type="Texture2D" uid="uid://dw1vtlugnvitr" path="res://Jungle Asset Pack/parallax background/plx-1.png" id="4_m4feo"]
+[ext_resource type="Texture2D" uid="uid://cv3dau36sa4qe" path="res://Jungle Asset Pack/parallax background/plx-2.png" id="5_mnau0"]
+[ext_resource type="Texture2D" uid="uid://c7kdt04v8oon1" path="res://Jungle Asset Pack/parallax background/plx-3.png" id="6_ff03v"]
+[ext_resource type="Texture2D" uid="uid://d2wdq5uugx5bw" path="res://Jungle Asset Pack/parallax background/plx-4.png" id="7_ql1v8"]
+[ext_resource type="Texture2D" uid="uid://b0qrnrtlfjdlf" path="res://Jungle Asset Pack/parallax background/plx-5.png" id="8_7014q"]
+[ext_resource type="Texture2D" uid="uid://0kuwts1v8ld4" path="res://Start Project Parallax Scrolling Website/leaf.png" id="9_n5usu"]
+[ext_resource type="AudioStream" uid="uid://bylthnutf2kcs" path="res://MUSIC/pixel-death-66829.mp3" id="10_wm1d4"]
+[ext_resource type="AudioStream" uid="uid://dhw0hna4k2msc" path="res://MUSIC/coin sound/coin-pickup-98269.mp3" id="11_kj8to"]
+
+[node name="Node2d" type="Node2D"]
+script = ExtResource("1_ftli7")
+
+[node name="GlobalBackground" type="ParallaxBackground" parent="."]
+
+[node name="back" type="ParallaxLayer" parent="GlobalBackground"]
+motion_scale = Vector2(0.005, 1)
+motion_mirroring = Vector2(1490, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GlobalBackground/back"]
+texture_filter = 1
+position = Vector2(1807, 866)
+scale = Vector2(11.323, 10.6852)
+texture = ExtResource("4_m4feo")
+
+[node name="back2" type="ParallaxLayer" parent="GlobalBackground"]
+position = Vector2(3, -11)
+motion_scale = Vector2(0.01, 1)
+motion_mirroring = Vector2(800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GlobalBackground/back2"]
+texture_filter = 1
+position = Vector2(392.678, 444.5)
+scale = Vector2(2.08986, 2.27315)
+texture = ExtResource("5_mnau0")
+
+[node name="back3" type="ParallaxLayer" parent="GlobalBackground"]
+motion_scale = Vector2(0.07, 1)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GlobalBackground/back3"]
+texture_filter = 1
+position = Vector2(477.494, 463)
+scale = Vector2(2.61229, 2.90741)
+texture = ExtResource("6_ff03v")
+
+[node name="back4" type="ParallaxLayer" parent="GlobalBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GlobalBackground/back4"]
+texture_filter = 1
+position = Vector2(630.933, 380.5)
+scale = Vector2(3.3287, 3.3287)
+texture = ExtResource("7_ql1v8")
+
+[node name="TREE FRONT" type="ParallaxLayer" parent="GlobalBackground"]
+motion_mirroring = Vector2(1500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GlobalBackground/TREE FRONT"]
+texture_filter = 1
+position = Vector2(767, 408)
+scale = Vector2(4.26506, 4.125)
+texture = ExtResource("8_7014q")
+
+[node name="back6" type="ParallaxLayer" parent="GlobalBackground"]
+visible = false
+position = Vector2(-4, -129)
+
+[node name="Sprite2D" type="Sprite2D" parent="GlobalBackground/back6"]
+position = Vector2(867, 137)
+scale = Vector2(0.478472, 0.478472)
+texture = ExtResource("9_n5usu")
+
+[node name="CameraBackground" type="Camera2D" parent="GlobalBackground"]
+position = Vector2(578, 326)
+
+[node name="birds3" parent="." instance=ExtResource("2_fdeq5")]
+position = Vector2(-47, 188)
+scale = Vector2(3.2, 3.2)
+
+[node name="birds4" parent="." instance=ExtResource("2_fdeq5")]
+position = Vector2(-130, 241)
+scale = Vector2(3, 3)
+
+[node name="birds5" parent="." instance=ExtResource("2_fdeq5")]
+position = Vector2(30, 228)
+scale = Vector2(3, 3)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_drbrl")
+
+[node name="TimerLevel" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.985
+one_shot = true
+
+[node name="diedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wm1d4")
+
+[node name="collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_kj8to")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

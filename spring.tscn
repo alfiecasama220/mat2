@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6vuvdjyrkuif"]
+
+[ext_resource type="Script" path="res://springScript.gd" id="1_7d77o"]
+[ext_resource type="Texture2D" uid="uid://cnsp7hr4cguv4" path="res://Jungle Asset Pack/jungle tileset/jungle tileset.png" id="2_0qi0j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnjsl"]
+atlas = ExtResource("2_0qi0j")
+region = Rect2(0, 219, 192, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1m7tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnjsl")
+}],
+"loop": false,
+"name": &"spring",
+"speed": 60.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhtba"]
+size = Vector2(69, 10.8721)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu7l1"]
+size = Vector2(68, 14)
+
+[node name="spring" type="CharacterBody2D"]
+script = ExtResource("1_7d77o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, -9)
+scale = Vector2(0.42, 0.42)
+sprite_frames = SubResource("SpriteFrames_1m7tp")
+animation = &"spring"
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -15.233)
+scale = Vector2(1, -1.14659)
+shape = SubResource("RectangleShape2D_lhtba")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 65
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_hu7l1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

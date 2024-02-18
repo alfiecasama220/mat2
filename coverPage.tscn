@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://edxifb68ydom"]
+
+[ext_resource type="Script" path="res://coverPageScript.gd" id="1_ai3vs"]
+[ext_resource type="Texture2D" uid="uid://cs6w6hcs8yhvi" path="res://coverpage/final.jpg" id="1_ymk5t"]
+
+[sub_resource type="Animation" id="Animation_3sxug"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dd2h0"]
+_data = {
+"move": SubResource("Animation_3sxug")
+}
+
+[node name="Coverpage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ai3vs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 650.0
+texture = ExtResource("1_ymk5t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 0.419608)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 584.0
+offset_right = 636.0
+offset_bottom = 610.0
+scale = Vector2(1.15868, 1.15868)
+pivot_offset = Vector2(75, 12)
+text = "Press ENTER to play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dd2h0")
+}

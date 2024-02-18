@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://c27tv2o7m1611"]
+
+[ext_resource type="Script" path="res://gameOverScript.gd" id="1_wroai"]
+[ext_resource type="FontFile" uid="uid://bmmssvo180edv" path="res://asset/fonts/JurassicPark-BL48.ttf" id="2_61go4"]
+[ext_resource type="Texture2D" uid="uid://bqaiv18ttye4f" path="res://asset/3.png" id="3_nuxav"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wroai")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 79.0
+offset_right = 1027.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("2_61go4")
+theme_override_font_sizes/font_size = 200
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 278.0
+offset_right = 676.0
+offset_bottom = 348.0
+texture_normal = ExtResource("3_nuxav")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="retry2"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_61go4")
+theme_override_font_sizes/font_size = 50
+text = "Retry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mainmenu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 366.0
+offset_right = 676.0
+offset_bottom = 436.0
+texture_normal = ExtResource("3_nuxav")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="mainmenu"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_61go4")
+theme_override_font_sizes/font_size = 50
+text = "Main menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 456.0
+offset_right = 675.0
+offset_bottom = 526.0
+texture_normal = ExtResource("3_nuxav")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="quit2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 200.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_61go4")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="retry2" to="." method="_on_retry_2_pressed"]
+[connection signal="pressed" from="mainmenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="quit2" to="." method="_on_quit_2_pressed"]

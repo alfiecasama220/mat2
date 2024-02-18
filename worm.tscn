@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://bpt7i4v4m0rqa"]
+
+[ext_resource type="Script" path="res://wormScript.gd" id="1_5kuc1"]
+[ext_resource type="Texture2D" uid="uid://qortb1hett28" path="res://enemy/Transparent PNG/frame-1.png" id="1_82ig3"]
+[ext_resource type="Texture2D" uid="uid://bgtuxqc0q70dh" path="res://enemy/Transparent PNG/frame-2.png" id="2_c0ak8"]
+[ext_resource type="Texture2D" uid="uid://dn56lcjaep2rr" path="res://enemy/Transparent PNG/frame-3.png" id="3_dcq7j"]
+[ext_resource type="Texture2D" uid="uid://f41knktfka47" path="res://enemy/Transparent PNG/frame-4.png" id="4_wh5hy"]
+[ext_resource type="Texture2D" uid="uid://ccl67ur7r0ptt" path="res://enemy/Transparent PNG/frame-5.png" id="5_l28lg"]
+[ext_resource type="Texture2D" uid="uid://bj7cppbrr5enq" path="res://enemy/Transparent PNG/frame-6.png" id="6_yeb3e"]
+[ext_resource type="Texture2D" uid="uid://dlmoc2waxrubg" path="res://enemy/Transparent PNG/frame-7.png" id="7_skv26"]
+[ext_resource type="Texture2D" uid="uid://uqoxn4n566b5" path="res://enemy/Transparent PNG/frame-8.png" id="8_3xdr7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66b5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_82ig3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c0ak8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dcq7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wh5hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l28lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yeb3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_skv26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3xdr7")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w1nn"]
+size = Vector2(23, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bywx3"]
+size = Vector2(26, 26)
+
+[node name="worm" type="CharacterBody2D"]
+script = ExtResource("1_5kuc1")
+
+[node name="move" type="AnimatedSprite2D" parent="."]
+position = Vector2(6.48438, -9.8326)
+scale = Vector2(0.041646, 0.041646)
+sprite_frames = SubResource("SpriteFrames_66b5l")
+animation = &"move"
+frame_progress = 0.590146
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -9.5)
+shape = SubResource("RectangleShape2D_1w1nn")
+
+[node name="collide" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collide"]
+position = Vector2(6, -10)
+shape = SubResource("RectangleShape2D_bywx3")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(6, -10)
+scale = Vector2(1.3, 1.3)
+
+[connection signal="body_entered" from="collide" to="." method="_on_collide_body_entered"]

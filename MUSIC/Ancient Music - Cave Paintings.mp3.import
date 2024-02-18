@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bren6lux0h20l"
+path="res://.godot/imported/Ancient Music - Cave Paintings.mp3-40552754b2a6a934b20468cf809e66cc.mp3str"
+
+[deps]
+
+source_file="res://MUSIC/Ancient Music - Cave Paintings.mp3"
+dest_files=["res://.godot/imported/Ancient Music - Cave Paintings.mp3-40552754b2a6a934b20468cf809e66cc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
